@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fafafa;
+  color: #222;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 180px;
+  background: var(--panel);
+  padding: 20px ;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #eee;
+}
+
+.sidebar-logo {
+    align-items: center;
+}
+
+.sidebar-logo img { 
+    width: 180px; 
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  color: #474747;
+  text-decoration: none;
+  border-radius: 12px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    color 0.3s ease;
+}
+
+/* Hover effect */
+.sidebar-item:hover {
+  transform: translateX(10px);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Active (selected) effect */
+.sidebar-item.active {
+  font-weight: 600;
+  font-size: 18px;
+  color: #ad00dc;
+}
