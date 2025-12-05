@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // ✅ Base URL for your Superadmin APIs
-const API_BASE_URL = "http://localhost:8080/superadmin";
+const API_BASE_URL = "http://onduty-backend-env.eba-wmdu9ckm.ap-south-1.elasticbeanstalk.com/superadmin";
 
 /**
  * ==============================
