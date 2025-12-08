@@ -24,3 +24,32 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* -----------------------------------------------
+   HIDE SCROLLBAR (but keep scroll working)
+   Paste this exactly here at bottom
+------------------------------------------------ */
+
+/* Chrome, Edge, Safari */
+.no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Smooth scrolling */
+.no-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
