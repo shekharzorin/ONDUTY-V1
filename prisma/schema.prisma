@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Employee {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String   @unique
+  position  String
+  department String?
+  contact   String?
+  status    String   @default("OFF_DUTY") // ON_DUTY, OFF_DUTY, ON_LEAVE
+  image     String?
+  phone     String?
+  salary    Float?
+  isActive  Boolean  @default(true)
+  
+  attendance Attendance[]
+  tasks      Task[]
+  requests   ClientRequest[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Client {
+  id        String   @id @default(cuid())
+  name      String
+  company   String
+  email     String?
+  phone     String?
+  address   String?
+  image     String? // Building image
+  
+  requests  ClientRequest[]
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ClientRequest {
+  id          String   @id @default(cuid())
+  employeeId  String
+  clientId    String?  // Optional if it's a new client request
+  clientName  String?  // For new clients
+  location    String?
+  reason      String?
+  status      String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  rejectionReason String?
+  
+  employee    Employee @relation(fields: [employeeId], references: [id])
+  client      Client?  @relation(fields: [clientId], references: [id])
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Attendance {
+  id          String   @id @default(cuid())
+  employeeId  String
+  date        DateTime @default(now())
+  clockIn     DateTime?
+  clockOut    DateTime?
+  status      String   @default("PRESENT") // PRESENT, ABSENT, LEAVE
+  
+  employee    Employee @relation(fields: [employeeId], references: [id])
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Task {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  status      String   @default("PENDING") // PENDING, IN_PROGRESS, COMPLETED
+  employeeId  String
+  dueDate     DateTime?
+  
+  employee    Employee @relation(fields: [employeeId], references: [id])
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
