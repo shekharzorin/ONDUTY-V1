@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 :root {
   --background: #ffffff;
@@ -6,6 +6,69 @@
 }
 
 @theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* -----------------------------------------------
+   HIDE SCROLLBAR (but keep scroll working)
+   Paste this exactly here at bottom
+------------------------------------------------ */
+
+/* Chrome, Edge, Safari */
+/* .no-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.no-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.no-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+} */
+
+/* Firefox */
+/* .no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+} */
+
+/* Smooth scrolling */
+/* .no-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+} */
+
+
+/* -----------------------------------------------
+   LEAFLET MAP CSS (Required for map tiles/markers)
+------------------------------------------------ */
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
+/* -----------------------------------------------
+   TAILWIND
+------------------------------------------------ */
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -27,7 +90,6 @@ body {
 
 /* -----------------------------------------------
    HIDE SCROLLBAR (but keep scroll working)
-   Paste this exactly here at bottom
 ------------------------------------------------ */
 
 /* Chrome, Edge, Safari */
@@ -53,3 +115,10 @@ body {
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
+
+/* Fix Leaflet map blank screen */
+.leaflet-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
