@@ -78,29 +78,29 @@ const Dashboard = () => {
     }
   };
 
-  // const [mapKey, setMapKey] = useState<string | null>(null);
-  // const [enabled, setEnabled] = useState<boolean>(false);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [mapKey, setMapKey] = useState<string | null>(null);
+  const [enabled, setEnabled] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   const loadConfig = async () => {
-  //     const config = await getMapConfig();
+  useEffect(() => {
+    const loadConfig = async () => {
+      const config = await getMapConfig();
 
-  //     if (!config.success || !config.mapEnabled) {
-  //       console.log("🛑 Map disabled");
-  //       setIsLoading(false);
-  //       return;
-  //     }
+      if (!config.success || !config.mapEnabled) {
+        console.log("🛑 Map disabled");
+        setIsLoading(false);
+        return;
+      }
 
-  //     setEnabled(true);
-  //     setMapKey(config.webMapKey);
-  //     setIsLoading(false);
+      setEnabled(true);
+      setMapKey(config.webMapKey);
+      setIsLoading(false);
 
-  //     console.log("🌍 Web Map Key:", config.webMapKey);
-  //   };
+      console.log("🌍 Web Map Key:", config.webMapKey);
+    };
 
-  //   loadConfig();
-  // }, []);
+    loadConfig();
+  }, []);
 
   /* ---------------- LOAD LOGGED-IN ADMIN PROFILE IMAGE ---------------- */
   useEffect(() => {
