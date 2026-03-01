@@ -1,4 +1,9 @@
-import { getProfile, getProfileImage, logoutUser, postProfile } from "@/app/backend-api/api";
+import {
+  getProfile,
+  getProfileImage,
+  logoutUser,
+  postProfile,
+} from "@/app/backend-api/api";
 import Btn from "@/app/components/Btn";
 import History from "@/app/components/History";
 import ProfileCard from "@/app/components/ProfileCard";
@@ -51,9 +56,15 @@ const Profile = () => {
 
       // ✅ Handle Axios-specific errors
       if (err.response) {
-        Alert.alert("Error", err.response.data?.message || "Server error occurred.");
+        Alert.alert(
+          "Error",
+          err.response.data?.message || "Server error occurred.",
+        );
       } else if (err.request) {
-        Alert.alert("Error", "No response from server. Please check your connection.");
+        Alert.alert(
+          "Error",
+          "No response from server. Please check your connection.",
+        );
       } else {
         Alert.alert("Error", "Something went wrong while fetching profile.");
       }
@@ -61,9 +72,13 @@ const Profile = () => {
   };
 
   const openGallery = async () => {
-    const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+    const permissionResult =
+      await ImagePicker.requestMediaLibraryPermissionsAsync();
     if (!permissionResult.granted) {
-      Alert.alert("❌ Permission Denied", "Gallery access is required to select a profile picture.");
+      Alert.alert(
+        "❌ Permission Denied",
+        "Gallery access is required to select a profile picture.",
+      );
       return;
     }
 
@@ -144,7 +159,6 @@ const Profile = () => {
     ]);
   };
 
-
   return (
     <SafeAreaProvider style={styles.container}>
       <SafeAreaView style={styles.flex}>
@@ -152,15 +166,22 @@ const Profile = () => {
           <History title="Profile" onPress={() => router.back()} />
 
           <View style={[styles.centeralign, styles.gap]}>
-            <Image key={imageRefreshKey}
-              source={tempImage ? { uri: tempImage } : profileData.profilePic ? { uri: profileData.profilePic }
-                : require("../../assets/images/profile.webp")
-              } style={styles.profile}
+            <Image
+              key={imageRefreshKey}
+              source={
+                tempImage
+                  ? { uri: tempImage }
+                  : profileData.profilePic
+                    ? { uri: profileData.profilePic }
+                    : require("../../assets/images/profile.webp")
+              }
+              style={styles.profile}
             />
 
             <View style={styles.iconbox}>
               <TouchableOpacity onPress={openGallery}>
-                <Image source={require("../../assets/images/add-icon.png")}
+                <Image
+                  source={require("../../assets/images/add-icon.png")}
                   style={styles.bellicon}
                 />
               </TouchableOpacity>
@@ -172,7 +193,9 @@ const Profile = () => {
               title="Name : "
               placeholder="Enter your name"
               value={profileData.name}
-              setValue={(text) => setProfileData({ ...profileData, name: text })}
+              setValue={(text) =>
+                setProfileData({ ...profileData, name: text })
+              }
               autoCapitalize="words"
             />
 
@@ -180,7 +203,9 @@ const Profile = () => {
               title="Mobile : "
               placeholder="Enter your mobile number"
               value={profileData.mobile}
-              setValue={(text) => setProfileData({ ...profileData, mobile: text })}
+              setValue={(text) =>
+                setProfileData({ ...profileData, mobile: text })
+              }
               keyboardType="numeric"
             />
 
@@ -188,20 +213,38 @@ const Profile = () => {
               <View style={styles.rowitem}>
                 <Text style={styles.label}>Email :</Text>
                 <View style={[styles.rowitem, styles.rightalign]}>
-                  <FontAwesome name="ban" size={20} color="gray" style={{ top: 1 }} />
-                  <Text style={[styles.label, { left: -15 }]}>Not editable</Text>
+                  <FontAwesome
+                    name="ban"
+                    size={20}
+                    color="gray"
+                    style={{ top: 1 }}
+                  />
+                  <Text style={[styles.label, { left: -15 }]}>
+                    Not editable
+                  </Text>
                 </View>
               </View>
               <Text style={[styles.profiletext, { marginBottom: 7 }]}>
-                {isLoading ? "Please wait" : profileData?.email || "No data is found"}
+                {isLoading
+                  ? "Please wait"
+                  : profileData?.email || "No data is found"}
               </Text>
             </View>
-
           </View>
         </View>
 
-        <View style={[styles.rowitem, styles.paddinghorizontal]}>
-          <Btn title="Update Profile" onPress={updateProfile} style={styles.width48} />
+        <View
+          style={[
+            styles.rowitem,
+            styles.paddinghorizontal,
+            styles.marginBottom1,
+          ]}
+        >
+          <Btn
+            title="Update Profile"
+            onPress={updateProfile}
+            style={styles.width48}
+          />
           <Btn title="Log Out" onPress={handleLogout} style={styles.width48} />
         </View>
       </SafeAreaView>
