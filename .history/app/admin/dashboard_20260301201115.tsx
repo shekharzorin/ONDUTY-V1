@@ -6,7 +6,6 @@ import {
   deleteNotification,
   fetchEmployeeProfilePhoto,
   getAdminDashboard,
-  getMapConfig,
   getNotifications,
   getProfile,
   getProfileImage,

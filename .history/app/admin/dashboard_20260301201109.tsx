@@ -6,7 +6,6 @@ import {
   deleteNotification,
   fetchEmployeeProfilePhoto,
   getAdminDashboard,
-  getMapConfig,
   getNotifications,
   getProfile,
   getProfileImage,
@@ -98,7 +97,7 @@ function Dashboard() {
   useEffect(() => {
     getMapConfig()
       .then(setConfig)
-      .catch((err: any) => {
+      .catch((err) => {
         console.error("❌ Error fetching map config:", err);
       });
   }, []);
