@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: var(--font-poppins);
+
+  --color-primary: #8D6BDC;
+  --color-secondary: #444444;
+  --color-bg: #efefef;
+  --color-sidebar: #ffffff;
+  --color-gray:#5d5d5d;
+}
