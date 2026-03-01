@@ -8,7 +8,7 @@ import {
   getAdminDashboard,
   getNotifications,
   getProfile,
-  getProfileImage,
+  getProfileImage
 } from "@/app/backend-api/api";
 import Dashcard from "@/app/components/Dashcard";
 import AdminLocationTracker from "@/app/services/AdminTracker";

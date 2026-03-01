@@ -381,10 +381,10 @@ function Dashboard() {
             />
           </View>
 
-          {/* <View style={styles.paddinghorizontal}>
+          <View style={styles.paddinghorizontal}>
             <Text style={styles.status}>Map Config Test</Text>
             <Text style={styles.color}>{JSON.stringify(config, null, 2)}</Text>
-          </View> */}
+          </View>
 
           <Text style={[styles.status, styles.paddinghorizontal]}>
             Today’s Activity

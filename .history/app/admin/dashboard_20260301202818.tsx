@@ -6,6 +6,7 @@ import {
   deleteNotification,
   fetchEmployeeProfilePhoto,
   getAdminDashboard,
+  getMapConfig,
   getNotifications,
   getProfile,
   getProfileImage,
@@ -94,13 +95,13 @@ function Dashboard() {
   const [totalTasksAllEmployees, setTotalTasksAllEmployees] = useState(0);
   const hasPostedLocation = useRef(false);
 
-  // useEffect(() => {
-  //   getMapConfig()
-  //     .then(setConfig)
-  //     .catch((err: any) => {
-  //       console.error("❌ Error fetching map config:", err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    getMapConfig()
+      .then(setConfig)
+      .catch((err: any) => {
+        console.error("❌ Error fetching map config:", err);
+      });
+  }, []);
 
   /* ------------------ PROFILE ------------------ */
   useFocusEffect(
@@ -381,10 +382,10 @@ function Dashboard() {
             />
           </View>
 
-          {/* <View style={styles.paddinghorizontal}>
+          <View style={styles.paddinghorizontal}>
             <Text style={styles.status}>Map Config Test</Text>
             <Text style={styles.color}>{JSON.stringify(config, null, 2)}</Text>
-          </View> */}
+          </View>
 
           <Text style={[styles.status, styles.paddinghorizontal]}>
             Today’s Activity
