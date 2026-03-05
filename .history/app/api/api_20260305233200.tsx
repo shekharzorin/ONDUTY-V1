@@ -1,8 +1,7 @@
 import axios from "axios";
 import { storage } from "../main/services/storage";
 
-export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_SUPER_ADMIN_API_BASE_URL;
+export const API_BASE_URL = "https://api.ondutyapp.in"; // <-- REPLACE WITH YOUR ACTUAL API URL
 
 /* ------------------------------------------------------------------
    AXIOS INSTANCE

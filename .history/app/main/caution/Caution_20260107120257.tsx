@@ -2,8 +2,8 @@ import { FaExclamationTriangle } from "react-icons/fa";
 
 const Caution = () => {
   return (
-    <div className="flex pb-15 border-t pt-4 text-sm text-gray-600 w-full ">
-      <div className="flex flex-col gap-3 bg-yellow-50 border border-yellow-200 rounded-xl p-4 w-full">
+    <div className="flex pb-15 border-t pt-4 text-sm text-gray-600 w-full">
+      <div className="flex flex-col gap-3 bg-yellow-50 border border-yellow-200 rounded-xl p-4">
         <div className="flex gap-3">
           <FaExclamationTriangle size={30} className="text-yellow-500" />
           <p className="flex font-semibold text-yellow-700 items-center justify-center">

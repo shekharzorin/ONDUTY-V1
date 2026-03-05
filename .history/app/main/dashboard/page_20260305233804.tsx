@@ -435,7 +435,9 @@ const page = () => {
       </div>
 
       {/* CAUTIONARY NOTE */}
-      <Caution />
+      <div className="flex items-center justify-centers">
+        <Caution />
+      </div>
 
       {/* Add Admin Modal */}
       {isAddAdminOpen && (

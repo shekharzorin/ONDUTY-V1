@@ -61,7 +61,7 @@ const page = () => {
   const planOptions = [
     { value: "trial", label: "Trial" },
     { value: "silver", label: "Silver" },
-    { value: "gold", label: "Gold" },
+    { value: "gold", label: "Gold"},
     { value: "diamond", label: "Diamond" },
   ];
   const planTypeOptions = [
@@ -216,7 +216,7 @@ const page = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen w-full p-5 gap-5">
+    <div className="flex flex-col items-center justify-center h-screen w-full p-5 gap-5">
       {/* HEADER */}
       <div className="flex flex-col">
         <div className="flex">
@@ -497,7 +497,9 @@ const page = () => {
                 >
                   <div className="flex gap-2.5 items-center justify-center">
                     <FaIndianRupeeSign size={20} />
-                    {planOptions.find((o) => o.value === planFilter)?.label}
+                    {
+                      planOptions.find((o) => o.value === planFilter)?.label
+                    }
                   </div>
                   <MdKeyboardArrowDown
                     size={30}

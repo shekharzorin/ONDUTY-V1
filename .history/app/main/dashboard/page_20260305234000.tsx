@@ -435,7 +435,9 @@ const page = () => {
       </div>
 
       {/* CAUTIONARY NOTE */}
-      <Caution />
+      <div className="flex w-full">
+        <Caution />
+      </div>
 
       {/* Add Admin Modal */}
       {isAddAdminOpen && (
