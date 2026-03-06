@@ -1,0 +1,20 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Button from "../ui/Button";
+import { ArrowRight, Phone } from "lucide-react";
+import { FcCallTransfer } from "react-icons/fc";
+
+const Getready = () => {
+  return (
+    <section
+      id="getready"
+      className=" px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 max-w-384 w-full "
+    >
+
+      
+    </section>
+  );
+};
+
+export default Getready;
