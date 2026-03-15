@@ -275,14 +275,14 @@ const page = () => {
       </div>
 
       {/* SEARCH + FILTER */}
-      <div className="flex gap-3 lg:gap-5 w-full h-12">
+      <div className="flex gap-5 w-full h-12">
         {/* SEARCH */}
         <div className=" group flex items-center w-[60%] md:w-full bg-(--color-sidebar) text-(--color-gray) rounded-2xl shadow-lg px-3 py-2 text-[18px] font-semibold">
           <MdSearch size={30} className="search-icon transition-transform" />
 
           <input
             type="text"
-            placeholder="Search by name/email"
+            placeholder="Search by name / email"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             className="ml-2 w-full outline-none bg-transparent"
@@ -389,7 +389,7 @@ const page = () => {
       </div>
 
       {/* ================= MOBILE UI ================= */}
-      <div className="grid md:hidden gap-4">
+      <div className="grid md:hidden gap-4 truncate">
         {filteredCompanies.length === 0 ? (
           <p className="text-(--color-gray) font-medium px-5">
             No data available
@@ -398,7 +398,7 @@ const page = () => {
           filteredCompanies.map((c: any) => (
             <div
               key={c._id}
-              className="flex truncate items-center gap-5 bg-(--color-sidebar) rounded-3xl shadow-lg p-3"
+              className="flex items-center gap-5 bg-(--color-sidebar) rounded-3xl shadow-lg p-3"
             >
               <Image
                 src={c.imageUrl || profile}

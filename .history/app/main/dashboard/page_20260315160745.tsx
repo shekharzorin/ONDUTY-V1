@@ -275,14 +275,14 @@ const page = () => {
       </div>
 
       {/* SEARCH + FILTER */}
-      <div className="flex gap-3 lg:gap-5 w-full h-12">
+      <div className="flex gap-5 w-full h-12">
         {/* SEARCH */}
         <div className=" group flex items-center w-[60%] md:w-full bg-(--color-sidebar) text-(--color-gray) rounded-2xl shadow-lg px-3 py-2 text-[18px] font-semibold">
           <MdSearch size={30} className="search-icon transition-transform" />
 
           <input
             type="text"
-            placeholder="Search by name/email"
+            placeholder="Search by name / email"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             className="ml-2 w-full outline-none bg-transparent"
@@ -292,7 +292,7 @@ const page = () => {
         {/* STATUS DROPDOWN */}
         <div className="w-[45%] md:w-[30%] lg:w-[20%] xl:w-[15%]">
           <button
-            className="w-full bg-(--color-sidebar) text-(--color-gray) font-medium p-2.5 rounded-2xl shadow-lg flex justify-between items-center"
+            className="w-full truncate bg-(--color-sidebar) text-(--color-gray) font-medium p-2.5 rounded-2xl shadow-lg flex justify-between items-center"
             onClick={() => setIsOpen(!isOpen)}
           >
             {statusOptions.find((o) => o.value === statusFilter)?.label}
@@ -398,7 +398,7 @@ const page = () => {
           filteredCompanies.map((c: any) => (
             <div
               key={c._id}
-              className="flex truncate items-center gap-5 bg-(--color-sidebar) rounded-3xl shadow-lg p-3"
+              className="flex items-center gap-5 bg-(--color-sidebar) rounded-3xl shadow-lg p-3"
             >
               <Image
                 src={c.imageUrl || profile}

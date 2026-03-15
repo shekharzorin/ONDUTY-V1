@@ -153,45 +153,45 @@ const Page = () => {
         <div className="flex relative justify-between items-center">
           <div className="flex flex-col lg:flex-row gap-2">
             <p>Android Key :</p>
-            <p className="text-black break-all">{androidKey || "Not set"}</p>
+            <p className="text-black">{androidKey || "Not set"}</p>
           </div>
 
           <div
-            className="flex absolute right-0 -top-3 md:top-0 lg:-top-5 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
+            className="flex absolute bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
             onClick={() => handleDelete("android_map_key")}
           >
             <MdDelete size={26} />
           </div>
         </div>
 
-        <hr className="text-gray-300 p-2" />
+        <hr className="text-gray-300" />
 
         {/* IOS */}
         <div className="flex relative justify-between items-center">
           <div className="flex flex-col lg:flex-row gap-2">
             <p>iOS Key :</p>
-            <p className="text-black break-all">{iosKey || "Not set"}</p>
+            <p className="text-black">{iosKey || "Not set"}</p>
           </div>
 
           <div
-            className="flex absolute right-0 -top-3 md:top-0 lg:-top-5 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
+            className="flex absolute bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
             onClick={() => handleDelete("ios_map_key")}
           >
             <MdDelete size={26} />
           </div>
         </div>
 
-        <hr className="text-gray-300 p-2" />
+        <hr className="text-gray-300" />
 
         {/* WEB */}
         <div className="flex relative justify-between items-center">
           <div className="flex flex-col lg:flex-row gap-2">
             <p>Web Key : </p>
-            <p className="text-black break-all">{webKey || "Not set"}</p>
+            <p className="text-black">{webKey || "Not set"}</p>
           </div>
 
           <div
-            className="flex absolute right-0 -top-3 md:top-0 lg:-top-5 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
+            className="flex absolute bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
             onClick={() => handleDelete("web_map_key")}
           >
             <MdDelete size={26} />

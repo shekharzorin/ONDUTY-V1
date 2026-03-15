@@ -275,7 +275,7 @@ const page = () => {
       </div>
 
       {/* SEARCH + FILTER */}
-      <div className="flex gap-3 lg:gap-5 w-full h-12">
+      <div className="flex gap-3 w-full h-12">
         {/* SEARCH */}
         <div className=" group flex items-center w-[60%] md:w-full bg-(--color-sidebar) text-(--color-gray) rounded-2xl shadow-lg px-3 py-2 text-[18px] font-semibold">
           <MdSearch size={30} className="search-icon transition-transform" />

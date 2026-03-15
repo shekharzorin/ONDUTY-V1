@@ -157,7 +157,7 @@ const Page = () => {
           </div>
 
           <div
-            className="flex absolute right-0 -top-3 md:top-0 lg:-top-5 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
+            className="flex absolute right-0 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
             onClick={() => handleDelete("android_map_key")}
           >
             <MdDelete size={26} />
@@ -174,7 +174,7 @@ const Page = () => {
           </div>
 
           <div
-            className="flex absolute right-0 -top-3 md:top-0 lg:-top-5 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
+            className="flex absolute right-0 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
             onClick={() => handleDelete("ios_map_key")}
           >
             <MdDelete size={26} />
@@ -191,7 +191,7 @@ const Page = () => {
           </div>
 
           <div
-            className="flex absolute right-0 -top-3 md:top-0 lg:-top-5 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
+            className="flex absolute right-0 top-0 bg-gray-300 text-(--color-gray) hover:bg-(--color-secondary) hover:scale-110 hover:text-(--color-primary) p-2 rounded-full cursor-pointer transition-all shadow-lg"
             onClick={() => handleDelete("web_map_key")}
           >
             <MdDelete size={26} />
